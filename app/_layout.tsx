@@ -1,20 +1,19 @@
 import "../global.css";
 
 import { registerDevMenuItems } from "expo-dev-menu";
-
-import { router, Stack } from "expo-router";
+import { Stack, router } from "expo-router";
 
 registerDevMenuItems([
   {
-    name: "Go to app",
+    name: "Storybook",
     callback: () => {
-      router.push("/");
+      router.replace("/storybook");
     },
   },
   {
-    name: "Go to Storybook",
+    name: "App root",
     callback: () => {
-      router.push("/storybook");
+      router.replace("/");
     },
   },
 ]);
@@ -22,10 +21,16 @@ registerDevMenuItems([
 export default function RootLayout() {
   return (
     <Stack>
-      <Stack.Screen name="index" />
+      <Stack.Screen
+        name="index"
+        options={{ headerShown: true, headerBackVisible: true }}
+      />
 
       <Stack.Protected guard={process.env.EXPO_PUBLIC_STORYBOOK === "true"}>
-        <Stack.Screen name="storybook" options={{ headerShown: false }} />
+        <Stack.Screen
+          name="storybook"
+          options={{ headerShown: false, headerBackVisible: false }}
+        />
       </Stack.Protected>
     </Stack>
   );

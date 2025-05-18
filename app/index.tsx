@@ -1,7 +1,10 @@
-import { Link } from "expo-router";
-import { Text, View } from "react-native";
+import { MyButton } from "@/components/Button/Button";
+import { useRouter } from "expo-router";
+import { View } from "react-native";
 
 export default function Index() {
+  const router = useRouter();
+
   return (
     <View
       style={{
@@ -10,8 +13,7 @@ export default function Index() {
         alignItems: "center",
       }}
     >
-      <Text>Edit app/index.tsx to edit this screen.</Text>
-      <Link href="/storybook">Storybook</Link>
+      <MyButton onPress={() => router.push("/storybook")} text="Press me" />
     </View>
   );
 }
