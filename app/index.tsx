@@ -13,7 +13,14 @@ export default function Index() {
         alignItems: "center",
       }}
     >
-      <MyButton onPress={() => router.push("/storybook")} text="Press me" />
+      <MyButton
+        onPress={() => router.replace("/storybook")}
+        text={
+          process.env.EXPO_PUBLIC_STORYBOOK === "true"
+            ? "Go to Storybook"
+            : "Won't work storybook disabled"
+        }
+      />
     </View>
   );
 }
