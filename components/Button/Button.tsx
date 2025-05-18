@@ -1,4 +1,4 @@
-import { TouchableOpacity, Text, StyleSheet } from 'react-native';
+import { Text, TouchableOpacity } from "react-native";
 
 export type MyButtonProps = {
   onPress?: () => void;
@@ -7,18 +7,12 @@ export type MyButtonProps = {
 
 export const MyButton = ({ onPress, text }: MyButtonProps) => {
   return (
-    <TouchableOpacity style={styles.container} onPress={onPress} activeOpacity={0.8}>
-      <Text style={styles.text}>{text}</Text>
+    <TouchableOpacity
+      className="px-4 py-2 bg-purple-500 rounded-md"
+      onPress={onPress}
+      activeOpacity={0.8}
+    >
+      <Text className="text-white">{text}</Text>
     </TouchableOpacity>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    paddingHorizontal: 16,
-    paddingVertical: 8,
-    backgroundColor: 'purple',
-    borderRadius: 8,
-  },
-  text: { color: 'white' },
-});

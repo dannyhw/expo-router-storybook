@@ -3,9 +3,8 @@ import StorybookUI from "../.storybook";
 
 export default function Storybook() {
   return (
-    <View>
+    <View style={{ flex: 1 }}>
       <StorybookUI />
-      {/* <Text>Storybook</Text> */}
     </View>
   );
 }

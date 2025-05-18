@@ -1,21 +1,25 @@
-import { View } from 'react-native';
-import type { Meta, StoryObj } from '@storybook/react';
-import { MyButton } from './Button';
+import type { Meta, StoryObj } from "@storybook/react";
+import { View } from "react-native";
+import { MyButton } from "./Button";
+
+const Container = ({ children }: { children: React.ReactNode }) => {
+  return <View className="p-4 items-start">{children}</View>;
+};
 
 const meta = {
-  title: 'MyButton',
+  title: "MyButton",
   component: MyButton,
   argTypes: {
-    onPress: { action: 'pressed the button' },
+    onPress: { action: "pressed the button" },
   },
   args: {
-    text: 'Hello world',
+    text: "Hello world",
   },
   decorators: [
     (Story) => (
-      <View style={{ padding: 16, alignItems: 'flex-start' }}>
+      <Container>
         <Story />
-      </View>
+      </Container>
     ),
   ],
 } satisfies Meta<typeof MyButton>;
@@ -28,6 +32,6 @@ export const Basic: Story = {};
 
 export const AnotherExample: Story = {
   args: {
-    text: 'Another example',
+    text: "Another example",
   },
 };
