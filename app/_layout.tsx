@@ -1,22 +1,27 @@
 import "../global.css";
 
-import { registerDevMenuItems } from "expo-dev-menu";
 import { Stack, router } from "expo-router";
+import { Platform } from "react-native";
 
-registerDevMenuItems([
-  {
-    name: "Storybook",
-    callback: () => {
-      router.replace("/storybook");
+if (Platform.OS !== "web" && __DEV__) {
+  // eslint-disable-next-line @typescript-eslint/no-require-imports
+  const { registerDevMenuItems } = require("expo-dev-menu");
+
+  registerDevMenuItems([
+    {
+      name: "Storybook",
+      callback: () => {
+        router.replace("/storybook");
+      },
     },
-  },
-  {
-    name: "App root",
-    callback: () => {
-      router.replace("/");
+    {
+      name: "App root",
+      callback: () => {
+        router.replace("/");
+      },
     },
-  },
-]);
+  ]);
+}
 
 export default function RootLayout() {
   return (
