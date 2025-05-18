@@ -1,12 +1,11 @@
-import "../global.css";
+import type { Preview } from '@storybook/react';
 
-/** @type { import('@storybook/react').Preview } */
-const preview = {
+const preview: Preview = {
   parameters: {
     controls: {
       matchers: {
         color: /(background|color)$/i,
-        date: /Date$/i,
+        date: /Date$/,
       },
     },
   },

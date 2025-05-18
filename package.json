@@ -9,10 +9,12 @@
     "ios": "expo run:ios",
     "web": "expo start --web",
     "lint": "expo lint",
-    "storybook-generate": "sb-rn-get-stories",
-    "storybook:dev": "EXPO_PUBLIC_STORYBOOK=true expo start --dev-client"
+    "storybook-generate": "sb-rn-get-stories -c .rnstorybook",
+    "storybook:dev": "EXPO_PUBLIC_STORYBOOK=true expo start --dev-client",
+    "storybook:web": "storybook dev -p 6006"
   },
   "dependencies": {
+    "@expo/config-plugins": "^10.0.2",
     "@expo/vector-icons": "^14.1.0",
     "@react-navigation/bottom-tabs": "^7.3.10",
     "@react-navigation/elements": "^2.3.8",
@@ -25,7 +27,6 @@
     "expo-haptics": "~14.1.4",
     "expo-image": "~2.1.7",
     "expo-linking": "~7.1.5",
-    "@expo/config-plugins": "^10.0.2",
     "expo-router": "~5.0.6",
     "expo-splash-screen": "~0.30.8",
     "expo-status-bar": "~2.2.3",
@@ -41,10 +42,12 @@
     "react-native-safe-area-context": "^5.4.0",
     "react-native-screens": "~4.10.0",
     "react-native-web": "~0.20.0",
-    "react-native-webview": "13.13.5",
-    "tailwindcss": "^3.4.17"
+    "react-native-webview": "13.13.5"
   },
   "devDependencies": {
+    "postcss": "^8.5.3",
+    "autoprefixer": "^10.4.21",
+    "tailwindcss": "^3.4.17",
     "@babel/core": "^7.25.2",
     "@babel/plugin-transform-class-static-block": "^7.27.1",
     "@gorhom/bottom-sheet": "^5.1.4",
@@ -53,7 +56,15 @@
     "@react-native-community/slider": "^4.5.6",
     "@storybook/addon-ondevice-actions": "^8.6.4",
     "@storybook/addon-ondevice-controls": "^8.6.4",
+    "@storybook/addon-essentials": "8.6.14",
+    "@storybook/addon-ondevice-backgrounds": "^8.6.4",
+    "@storybook/addon-ondevice-notes": "^8.6.4",
+    "@storybook/core": "8.6.14",
+    "@storybook/react": "8.6.14",
     "@storybook/react-native": "^8.6.4",
+    "storybook": "^8.6.14",
+    "@storybook/react-native-web-vite": "8.6.14",
+    "@storybook/test": "8.6.14",
     "@types/react": "~19.0.10",
     "babel-loader": "^8.4.1",
     "eslint": "^9.25.0",

@@ -1,6 +1,6 @@
 import { Stack } from "expo-router";
 import { View } from "react-native";
-import StorybookUI from "../.storybook";
+import StorybookUI from "../.rnstorybook";
 
 export default function Storybook() {
   return (
